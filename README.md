@@ -1,32 +1,47 @@
-# 📦 Benchmarking Next.js App: Docker vs Virtual Machine
+# Benchmark Next.js: Docker vs VM
 
-This project compares the performance of a simple Next.js app when deployed using Docker vs directly on a Virtual Machine.
+Este proyecto compara el rendimiento de una aplicación Next.js ejecutada en Docker y en una Máquina Virtual (VM) usando pruebas de carga (`wrk`) y monitoreo de recursos (`psutil`).
 
-## 🧱 Structure
-- `notebooks/`: Jupyter notebook to record and compare metrics
-- `scripts/`: Setup scripts for VM and Docker
-- `app/`: Placeholder for your Next.js app with Docker setup
-- `results/`: Raw metrics collected (RAM, CPU, build time, etc.)
+## Estructura
 
-## ⚙️ Requirements
-- Docker (for Docker tests)
-- VirtualBox or native Linux VM
-- Python 3.8+
-- sysbench, jupyter, psutil, curl
+- **app/**: Código fuente de la app Next.js y Dockerfile.
+- **scripts/**: Scripts para benchmarking y monitoreo.
+- **notebooks/**: Análisis y visualización de resultados.
+- **results/**: Resultados generados por los benchmarks.
 
-## 🚀 Quick Start
+## ¿Cómo ejecutar los benchmarks?
 
-```bash
-# Setup VM
-cd scripts
-bash vm_setup.sh
+1. **Instala dependencias** en tu VM y/o contenedor:
+   - Python 3 y `psutil`
+   - `wrk`
 
-# OR setup Docker host
-bash docker_setup.sh
-```
+2. **Arranca la app Next.js**:
+   - En VM:  
+     ```sh
+     cd app
+     npm install
+     npm run build
+     npm start
+     ```
+   - En Docker:  
+     ```sh
+     cd app
+     docker build -t nextjs-bench .
+     docker run -p 3000:3000 nextjs-bench
+     ```
 
-## 📊 Metrics to Compare
-- Startup time (`docker compose up` vs `npm start`)
-- Build time (`npm run build`)
-- RAM/CPU usage (`top`, `psutil`, `docker stats`)
-- Time to first byte (using curl)
+3. **Ejecuta el benchmark**:
+   ```sh
+   cd scripts
+   bash benchmark.sh
+   ```
+
+4. **Analiza los resultados**:
+   - Abre el notebook en `notebooks/` para visualizar y comparar.
+
+## Recomendaciones
+
+- Ejecuta los benchmarks en condiciones similares (misma máquina física, sin otros procesos intensivos).
+- Guarda los resultados de cada entorno con nombres distintos para comparar fácilmente.
+
+---

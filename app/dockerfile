@@ -12,6 +12,9 @@ RUN npm run build
 # Etapa 2: Producción
 FROM node:20-alpine AS runner
 
+RUN apk add --no-cache wrk
+
+
 WORKDIR /app
 COPY --from=builder /app ./
 
