@@ -141,3 +141,50 @@ Este proyecto compara el rendimiento de una aplicación Next.js ejecutada en Doc
 - Guarda los resultados de cada entorno con nombres distintos para comparar fácilmente.
 
 ---
+
+## 🔒 5. Aislamiento y seguridad
+
+Las máquinas virtuales (VM) ofrecen un **aislamiento más fuerte** porque ejecutan su propio sistema operativo y kernel. Esto significa que, aunque una VM sea comprometida, el sistema host sigue más protegido.
+
+En cambio, **Docker comparte el kernel del sistema host**, lo que lo hace más eficiente, pero también potencialmente más vulnerable si no se configura correctamente.
+
+Docker implementa mecanismos de seguridad como **namespaces**, **cgroups** y capas adicionales como **AppArmor**, **SELinux** y **seccomp**. Aunque estas herramientas aíslan procesos y limitan permisos, el nivel de separación sigue siendo menor que en una VM tradicional.
+
+**Resumen:**
+
+- ✅ **VM** = más aislada, más segura por diseño  
+- ⚠️ **Docker** = seguro, pero depende más de configuraciones del sistema host
+
+---
+
+## ♻️ 6. Portabilidad y flexibilidad
+
+**Docker destaca en portabilidad.** Una imagen Docker puede ejecutarse casi sin cambios en Windows, Linux o macOS (con Docker Desktop). Esto lo hace ideal para entornos de desarrollo, pruebas y despliegue en la nube.
+
+Además, Docker está muy bien integrado en **pipelines de DevOps** y herramientas CI/CD como **GitHub Actions**, **GitLab CI** o **Jenkins**.
+
+Por otro lado, las **VM pueden ser exportadas e importadas**, pero sus archivos son pesados y menos flexibles. No es tan fácil mover una VM completa entre sistemas diferentes ni automatizar su despliegue en comparación con los contenedores.
+
+**Resumen:**
+
+- 🚀 **Docker** = alta portabilidad, ideal para DevOps, liviano y fácil de mover  
+- 🖥️ **VM** = menos flexible, más pesada y lenta para migrar o clonar
+
+---
+
+## ✅ Conclusión: ¿Cuándo usar VM y cuándo usar Docker?
+
+Después de comparar el rendimiento, uso de recursos, seguridad y flexibilidad, podemos decir que:
+
+- **Docker** es ideal cuando se necesita rapidez, eficiencia y portabilidad. Funciona mejor para:
+  - Aplicaciones pequeñas
+  - Microservicios
+  - Desarrollo ágil
+  - Entornos de integración continua (CI/CD)
+
+  Además, es más fácil de desplegar y escalar.
+
+- **Máquinas virtuales (VM)** son más adecuadas cuando se requiere:
+  - Aislamiento fuerte
+  - Ejecutar sistemas operativos completos
+  - Trabajar con aplicaciones más pesadas o que necesitan interfaz gráfica
