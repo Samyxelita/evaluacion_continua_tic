@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center transition-colors bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10 w-[90%] max-w-md text-center">
-        <h1 className="text-3xl font-bold mb-6">Hola desde Next.js + TS</h1>
+        <h1 className="text-3xl font-bold mb-6">Hola desde Next.js. Proyecto de Tic Samuel Herrera</h1>
 
         <div className="flex justify-center mb-4">
           <AnimatePresence mode="wait">

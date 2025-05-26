@@ -12,7 +12,7 @@ Una **máquina virtual (VM)** emula un sistema operativo completo y corre sobre 
 
 Ambas tecnologías son útiles para virtualización, pero tienen diferencias clave en rendimiento, uso de recursos y portabilidad. Este proyecto compara ambas en un entorno controlado.
 
-🔗 Repositorio: [https://github.com/Samyxelita/Proyecto_tic](https://github.com/Samyxelita/Proyecto_tic)
+🔗 Repositorio: [https://github.com/Samyxelita/Proyecto_tic](https://github.com/Samyxelita/evaluacion_continua_tic)
 
 Se adjuntan un archivo `.sh` y un `Dockerfile` para levantar ambas aplicaciones respectivamente.
 
@@ -66,6 +66,7 @@ Se adjuntan un archivo `.sh` y un `Dockerfile` para levantar ambas aplicaciones 
 | Disco usado   | 500 MB | 100 MB |
 
 ### 📈 Gráficos
+![Graficos](results/metricas2.png)
 
 - Docker consume menos RAM, CPU y disco.
 - Docker arranca mucho más rápido.
@@ -74,6 +75,8 @@ Se adjuntan un archivo `.sh` y un `Dockerfile` para levantar ambas aplicaciones 
 ---
 
 ## 🕸️ Gráfico araña
+![Grafico](results/arana_grafico.png)
+
 
 ### Interpretación del gráfico radar: VM vs Docker
 
